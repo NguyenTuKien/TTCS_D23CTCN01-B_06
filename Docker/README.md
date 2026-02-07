@@ -378,7 +378,7 @@ Nếu bạn đã từng chạy lệnh `sudo docker` *trước khi* thực hiện
 ### 2.1.3. Cấu hình proxy cho docker
 ![img.png](Image/proxy.png)
 
-_a. Proxy là gì?_
+**_a. Proxy là gì?_**
 Một **Proxy** (hay **Proxy Server**) hiểu đơn giản là một **"người gác cổng"** hoặc một **"người trung gian"** đứng giữa máy tính của bạn và Internet.
 
 Ví dụ:
