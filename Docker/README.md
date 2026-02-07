@@ -377,6 +377,7 @@ Nếu bạn đã từng chạy lệnh `sudo docker` *trước khi* thực hiện
   Để nâng cấp, bạn chỉ cần **chạy lại lệnh ở Bước 2** (`sudo apt-get install ...`). `apt` sẽ tự động tìm và cài đặt phiên bản mới nhất từ kho lưu trữ bạn đã thiết lập.
 ### 2.1.3. Cấu hình proxy cho docker
 ![img.png](Image/proxy.png)
+
 _a. Proxy là gì?_
 Một **Proxy** (hay **Proxy Server**) hiểu đơn giản là một **"người gác cổng"** hoặc một **"người trung gian"** đứng giữa máy tính của bạn và Internet.
 
