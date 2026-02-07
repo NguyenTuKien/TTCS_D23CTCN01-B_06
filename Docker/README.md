@@ -11,18 +11,18 @@ Nói cách khác, ảo hoá giúp **một máy vật lý hoạt động như nhi
 
 ![img.png](Image/hypervisor.png)
 ### **Mục đích của Ảo hoá**
-* **Tối ưu sử dụng tài nguyên phần cứng :** Giúp nhiều hệ thống chạy trên cùng một máy vật lý, tránh lãng phí tài nguyên.
-* **Giảm chi phí đầu tư và vận hành :** Không cần mua nhiều máy chủ vật lý, tiết kiệm điện năng, không gian, và chi phí bảo trì.
-* **Tăng khả năng linh hoạt và mở rộng :** Dễ dàng tạo, sao chép, di chuyển, hoặc khôi phục máy ảo khi cần.
-* **Tăng tính an toàn và cách ly :** Mỗi máy ảo hoạt động độc lập; lỗi hoặc tấn công trong một VM không ảnh hưởng đến VM khác.
-* **Thuận tiện cho phát triển, kiểm thử và đào tạo :** Dễ tạo môi trường test, thử nghiệm hệ điều hành mới, hoặc học cấu hình server mà không sợ hỏng máy thật.
+* **Tối ưu sử dụng tài nguyên phần cứng:** Giúp nhiều hệ thống chạy trên cùng một máy vật lý, tránh lãng phí tài nguyên.
+* **Giảm chi phí đầu tư và vận hành:** Không cần mua nhiều máy chủ vật lý, tiết kiệm điện năng, không gian, và chi phí bảo trì.
+* **Tăng khả năng linh hoạt và mở rộng:** Dễ dàng tạo, sao chép, di chuyển, hoặc khôi phục máy ảo khi cần.
+* **Tăng tính an toàn và cách ly:** Mỗi máy ảo hoạt động độc lập; lỗi hoặc tấn công trong một VM không ảnh hưởng đến VM khác.
+* **Thuận tiện cho phát triển, kiểm thử và đào tạo:** Dễ tạo môi trường test, thử nghiệm hệ điều hành mới, hoặc học cấu hình server mà không sợ hỏng máy thật.
 
 ---
 ## 2. Các loại ảo hóa và công nghệ ảo hóa thông dụng
 ### a. Ảo hóa hệ thống lưu trữ (Storage Virtualization)
 * **Ảo hóa lưu trữ** là quá trình **tập hợp (gộp)** nhiều thiết bị lưu trữ vật lý (như HDD, SSD, SAN, NAS...) thành **một không gian lưu trữ ảo thống nhất**.
 * Người dùng và ứng dụng chỉ thấy **một khối lưu trữ duy nhất**, không cần biết dữ liệu nằm ở thiết bị nào.
-* **Mục đích** : Tăng hiệu suất, dễ quản lý, phân bổ dung lượng linh hoạt và đảm bảo tính sẵn sàng cao (HA – High Availability).
+* **Mục đích**: Tăng hiệu suất, dễ quản lý, phân bổ dung lượng linh hoạt và đảm bảo tính sẵn sàng cao (HA – High Availability).
 
 | Loại ảo hóa                             | Mô tả ngắn gọn                                                              | Cách hoạt động                                                                                                                 | Một số công nghệ/giải pháp tiêu biểu                                      |
 | --------------------------------------- |-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ Nói cách khác, ảo hoá giúp **một máy vật lý hoạt động như nhi
     * Hệ thống quản lý sẽ tạo và cung cấp desktop ảo cho người dùng.
 ### d. Ảo hóa hệ thống máy chủ (Server Virtualization)
 * Là công nghệ cho phép **chạy nhiều máy ảo (VM)** trên **một máy chủ vật lý**, giúp:
-* **Mục đích :**
+* **Mục đích:**
   * Tăng **tính linh động**, dễ thiết lập và quản lý.
   * **Tiết kiệm tài nguyên**, chia sẻ tốt hơn giữa các ứng dụng.
   * **Tăng hiệu suất** và khả năng tận dụng phần cứng.
@@ -112,7 +112,7 @@ Nói cách khác, ảo hoá giúp **một máy vật lý hoạt động như nhi
   | **I/O Devices (chuột, bàn phím, USB)** | Được ảo hóa để chia sẻ hoặc tách biệt giữa VM và host.               |
 ### a. Ảo hóa được hỗ trợ bởi phần cứng (Hardware-assisted Virtualization)
 * Là cơ chế mà CPU và phần cứng của máy tính cung cấp chức năng đặc biệt để hỗ trợ ảo hóa, giúp máy ảo (VM) chạy nhanh hơn và ổn định hơn thay vì chạy qua phần mềm (hypervisor) mô phỏng.
-* Một số nền tảng ảo hóa được hỗ trợ bởi phần cứng :
+* Một số nền tảng ảo hóa được hỗ trợ bởi phần cứng:
 
 | Nền tảng                      | Tận dụng hardware virtualization như thế nào                     |
 | ----------------------------- | ---------------------------------------------------------------- |
@@ -120,16 +120,16 @@ Nói cách khác, ảo hoá giúp **một máy vật lý hoạt động như nhi
 | **VirtualBox**                | Có tùy chọn “Enable VT-x / AMD-V” để tăng tốc VM                 |
 | **KVM (Linux)**               | Dựa hoàn toàn vào VT-x/AMD-V — nếu không có, không thể chạy được |
 
-* Kiểm tra khả năng ảo hóa của máy : `egrep -wo 'vmx|svm' /proc/cpuinfo`
+* Kiểm tra khả năng ảo hóa của máy: `egrep -wo 'vmx|svm' /proc/cpuinfo`
   * `vmx` = Intel VT-x 
   * `svm` = AMD-V
   * Nếu không thấy, hãy vào BIOS / UEFI → bật “Intel Virtualization Technology” hoặc “SVM Mode”.
 ### b. Ảo hóa bán phần (Paravirtualization)
 * Là hình thức ảo hóa trong đó hệ điều hành khách (Guest OS) biết rằng nó đang chạy trong môi trường ảo hóa, và hợp tác với hypervisor để thực hiện các tác vụ đặc quyền (privileged operations).
 * Ví dụ: Khi máy áo cần ghi vào ổ cứng sector 1000.
-  * Ảo hóa toàn phần (Full-virtualization) : Hypervisor sẽ giả lập toàn bộ ổ cứng, máy ảo sẽ nghĩ nó đang ghi trực tiếp vào ổ cứng thật. Khi máy ảo gửi lệnh "ghi sector 1000", hypervisor phải bắt (trap) lệnh đó lại, dịch nó, rồi mới thực thi trên phần cứng thật.
-  * Ảo hóa bán phần (Paravirtualization) : VM sẽ gọi trực tiếp API của hypervisor (gọi là `hypercall`) để ghi vào sector 1000 trên ổ cứng thật, bỏ qua bước giả lập ổ cứng ảo.
-* Ưu & nhược điểm :
+  * Ảo hóa toàn phần (Full-virtualization): Hypervisor sẽ giả lập toàn bộ ổ cứng, máy ảo sẽ nghĩ nó đang ghi trực tiếp vào ổ cứng thật. Khi máy ảo gửi lệnh "ghi sector 1000", hypervisor phải bắt (trap) lệnh đó lại, dịch nó, rồi mới thực thi trên phần cứng thật.
+  * Ảo hóa bán phần (Paravirtualization): VM sẽ gọi trực tiếp API của hypervisor (gọi là `hypercall`) để ghi vào sector 1000 trên ổ cứng thật, bỏ qua bước giả lập ổ cứng ảo.
+* Ưu & nhược điểm:
 
 | Ưu điểm                                                             | Nhược điểm                                              |
 | ------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -184,10 +184,10 @@ Công nghệ phổ biến: **Docker**, **Kubernetes**, **Podman**, **LXC**
 ## 2. Docker
 **Docker** là nền tảng mã nguồn mở giúp **tạo, triển khai và quản lý container** một cách dễ dàng.
 
-**Các thành phần chính của Docker :**
+**Các thành phần chính của Docker:**
 
 | Thành phần | Vai trò (Nó là gì?)                                | Mục đích (Nó làm gì?) |
-| :--- |:---------------------------------------------------| :--- |
+|:--- |:---------------------------------------------------|:--- |
 | **Docker Engine (Động cơ)** | "Trái tim" của Docker, bao gồm Daemon, CLI và API. | Quản lý, xây dựng và chạy các container. |
 | **Docker Daemon (Trình nền)** | "Bộ não" chạy nền, lắng nghe lệnh.                 | Thực thi các lệnh như tạo Image, chạy Container. |
 | **Docker CLI (Dòng lệnh)** | "Người giao tiếp" (ví dụ: `docker run`).           | Cung cấp giao diện để người dùng ra lệnh cho Docker Daemon. |
@@ -210,7 +210,7 @@ Nếu **Image** (Hình ảnh) là một **"Class"** (lớp) trong lập trình h
 Một container đóng gói ứng dụng của bạn cùng với tất cả các phụ thuộc của nó (thư viện, tệp cấu hình, runtime) vào một môi trường bị cô lập hoàn toàn.
 
 ---
-**Các đặc tính quan trọng nhất :**
+**Các đặc tính quan trọng nhất:**
 
 **_a. Tính cô lập (Isolation)_**
 
@@ -415,7 +415,7 @@ Bạn cần cấu hình proxy cho Docker ở **hai nơi** hoàn toàn khác nhau
 #### 2.1.3.1. Cấu hình proxy cho docker client
 Mục đích là để các **container** của bạn (khi `build` hoặc `run`) có thể sử dụng proxy để truy cập Internet (ví dụ: để chạy `apt-get install` hoặc `curl`).
 
-Có hai cách chính để thực hiện cấu hình proxy cho docker client :
+Có hai cách chính để thực hiện cấu hình proxy cho docker client:
 * Cấu hình qua file `config.json`
 * Cấu hình thủ công qua CLI (dùng `--build-arg` hoặc `--env`)
 
@@ -743,7 +743,7 @@ Có hai loại Docker Registry chính:
     * Sử dụng các dịch vụ Registry riêng tư trên cloud (GCR, ECR, ACR).
 ### 2.2.5. Docker Network
 **Docker Network** là cơ chế cho phép các container (và máy chủ Docker) giao tiếp với nhau và với thế giới bên ngoài. Docker sửs dụng các "trình điều khiển" (drivers) mạng để tạo ra các loại mạng khác nhau, tùy thuộc vào nhu cầu của bạn.
-Có một số loại mạng phổ biến :
+Có một số loại mạng phổ biến:
 
 #### a. Bridge (Mặc định)
 
@@ -820,7 +820,7 @@ Docker xây dựng image (ảnh) bằng cách đọc các chỉ dẫn (instructi
 Các cú pháp chính được dùng trong 'Dockerfile':
 
 | Chỉ dẫn | Mục đích | Ví dụ |
-| :--- | :--- | :--- |
+|:--- |:--- |:--- |
 | **`FROM`** | **(Bắt buộc)** Đặt image cơ sở (base image) để bắt đầu. Luôn là lệnh đầu tiên. | `FROM ubuntu:22.04` <br> `FROM eclipse-temurin:17-jre` |
 | **`WORKDIR`** | Đặt thư mục làm việc (working directory) cho các lệnh theo sau nó. Giúp file sạch sẽ hơn. | `WORKDIR /app` |
 | **`COPY`** | Sao chép tệp/thư mục từ *máy của bạn* (context) vào *bên trong* image. | `COPY . /app` <br> `COPY target/app.jar app.jar` |
@@ -837,8 +837,8 @@ Các cú pháp chính được dùng trong 'Dockerfile':
 * Cú pháp: `docker pull [OPTIONS] <image_name>[:<tag>]`
   * `<image_name>`: Tên của image bạn muốn tải (ví dụ: `ubuntu`, `nginx`, `redis`).
   * `[:<tag>]` (Tùy chọn): Chỉ định phiên bản (version) của image _(mặc địch là `latest`)_
-* Mục đích : Nó dùng để tải (download) một image từ một remote registry (kho chứa image) về máy tính local của bạn. Nơi tải phổ biến nhất chính là Docker Hub.
-* Ví dụ : 
+* Mục đích: Nó dùng để tải (download) một image từ một remote registry (kho chứa image) về máy tính local của bạn. Nơi tải phổ biến nhất chính là Docker Hub.
+* Ví dụ: 
 ```shell 
 ngtukien@NgTuKien:~/Documents/TYP/typ-training-2025$ docker pull mcr.microsoft.com/mssql/server:2022-latest
 2022-latest: Pulling from mssql/server
@@ -852,21 +852,21 @@ ngtukien@NgTuKien:~/Documents/TYP/typ-training-2025$ docker image ls
 REPOSITORY                       TAG           IMAGE ID       CREATED        SIZE
 mcr.microsoft.com/mssql/server   2022-latest   3c94bf005911   2 months ago   1.61GB
 ```
-* Một số `option` thường dùng : 
-  * `--platform <platform>` : Buộc Docker pull image cho một kiến trúc (architecture) CPU cụ thể, ngay cả khi nó không phải là kiến trúc máy của bạn.
-    * Ví dụ : Bạn đang dùng Mac M1 _(kiến trúc `linux/arm64`)_ nhưng muốn chạy một image cũ chỉ có bản cho Intel _(kiến trúc `linux/amd64`)_.
+* Một số `option` thường dùng: 
+  * `--platform <platform>`: Buộc Docker pull image cho một kiến trúc (architecture) CPU cụ thể, ngay cả khi nó không phải là kiến trúc máy của bạn.
+    * Ví dụ: Bạn đang dùng Mac M1 _(kiến trúc `linux/arm64`)_ nhưng muốn chạy một image cũ chỉ có bản cho Intel _(kiến trúc `linux/amd64`)_.
         ```shell
         docker pull --platform linux/amd64 mysql:8.0
         ```
 ### 2.4.2. Docker run
-* **Cú pháp :** `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
+* **Cú pháp:** `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
   * `COMMAND`: Đây là lệnh (instruction) mà bạn muốn thực thi bên trong container thay thế cho `CMD` hoặc `ENTRYPOINT` đã định nghĩa trong `Dockerfile`.
   * `ARG...`: Các đối số (arguments) bổ sung cho lệnh `COMMAND`.
-* **Mục đích :** Lệnh `docker run` được dùng để **tạo và khởi chạy một container mới** từ một image đã có.
+* **Mục đích:** Lệnh `docker run` được dùng để **tạo và khởi chạy một container mới** từ một image đã có.
     * Nó sẽ lấy một image (ví dụ: `nginx:latest` mà bạn đã `pull` về), tạo ra một "thực thể" (instance) chạy được từ image đó, gọi là container.
     * Khi chạy, nó sẽ tạo một lớp (layer) có thể ghi (writable) trên cùng các lớp chỉ đọc (read-only) của image.
     * Nó sẽ khởi động tiến trình chính được định nghĩa trong `Dockerfile` (bằng `CMD` hoặc `ENTRYPOINT`), hoặc chạy `[COMMAND]` mà bạn chỉ định ngay trên lệnh `run`.
-* Ví dụ : 
+* Ví dụ: 
     ```shell
     ngtukien@NgTuKien:~/Documents/TYP/typ-training-2025$ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=TestAcc@1234" -p "1433:1433" --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
     570a5e9233518a6a01344125bfc83f952df092b947bc2beb4febbf02d037201c
@@ -874,7 +874,7 @@ mcr.microsoft.com/mssql/server   2022-latest   3c94bf005911   2 months ago   1.6
     CONTAINER ID   IMAGE                                        COMMAND                  CREATED          STATUS          PORTS                                         NAMES
     570a5e923351   mcr.microsoft.com/mssql/server:2022-latest   "/opt/mssql/bin/laun…"   37 seconds ago   Up 36 seconds   0.0.0.0:1433->1433/tcp, [::]:1433->1433/tcp   sqlserver
     ```
-* **Một số `option` phổ biến :**
+* **Một số `option` phổ biến:**
     * `-d` (hoặc `--detach`): Chạy container ở chế độ **ngầm** (detached mode). Thay vì chiếm giữ terminal của bạn, nó sẽ chạy ở background và chỉ in ra ID của container.
     * `-p` (hoặc `--publish`): **Ánh xạ cổng** (port) từ máy host vào cổng của container.
         * Cú pháp: `hostPort:containerPort`.
@@ -893,11 +893,11 @@ mcr.microsoft.com/mssql/server   2022-latest   3c94bf005911   2 months ago   1.6
     * `--restart <policy>`: Thiết lập chính sách **tự động khởi động lại** container khi nó bị dừng.
         * Ví dụ: `--restart unless-stopped` (Luôn khởi động lại, trừ khi bạn chủ động `stop` nó).
 ### 2.4.3. Docker build
-* Cú pháp : `docker build [OPTIONS] PATH`
-* Mục đích : Lệnh `docker build` được sử dụng để **xây dựng một Docker image** (một "khuôn mẫu" ứng dụng) từ các chỉ dẫn (instructions) chứa trong một tệp `Dockerfile` và một "context" (ngữ cảnh).
+* Cú pháp: `docker build [OPTIONS] PATH`
+* Mục đích: Lệnh `docker build` được sử dụng để **xây dựng một Docker image** (một "khuôn mẫu" ứng dụng) từ các chỉ dẫn (instructions) chứa trong một tệp `Dockerfile` và một "context" (ngữ cảnh).
   * **Dockerfile:** Là một tệp văn bản (`Dockerfile`) chứa các hướng dẫn từng bước để tạo ra image (ví dụ: `FROM` image nền nào, `COPY` tệp nào vào, `RUN` lệnh gì, `CMD` chạy gì khi khởi động).
   * **Context:** Là tập hợp các tệp và thư mục tại đường dẫn (PATH) bạn chỉ định. Docker sẽ đóng gói "context" này (thường là thư mục dự án của bạn, ký hiệu là `.`) và gửi nó đến Docker daemon để thực hiện build.
-* Ví dụ : 
+* Ví dụ: 
 ```shell
 ngtukien@NgTuKien:~/Documents/Team7/StemHub$ docker build --tag stemhub:1.0 .
 [+] Building 43.8s (13/15)                                                                                                                                                  docker:default
@@ -922,17 +922,17 @@ stemhub                          1.0           06fe73a9a64e   About a minute ago
 mcr.microsoft.com/mssql/server   2022-latest   3c94bf005911   2 months ago         1.61GB
 mcr.microsoft.com/mssql/server   latest        3c94bf005911   2 months ago         1.61GB
 ```
-* Một số `option` phổ biến : 
+* Một số `option` phổ biến: 
   * `-t` (hoặc `--tag`): Dùng để **đặt tên (repository) và nhãn (tag)** cho image của bạn theo định dạng `name:tag`. Nếu không dùng cờ này, image build xong sẽ không có tên (chỉ có ID), rất khó quản lý.
   * `-f` (hoặc `--file`): Chỉ định vị trí hoặc tên của `Dockerfile` nếu nó không tên là `Dockerfile` hoặc không nằm ở thư mục gốc của context.
-  * `--no-cache` : Buộc Docker build lại từ đầu, **không sử dụng cache** (bộ nhớ đệm) của các layer (lớp) trước đó.
+  * `--no-cache`: Buộc Docker build lại từ đầu, **không sử dụng cache** (bộ nhớ đệm) của các layer (lớp) trước đó.
   * `--build-arg <key>=<value>`: Truyền các **biến môi trường lúc build** (build-time variables) vào bên trong `Dockerfile`.
 ### 2.4.4. Docker tag
 Lệnh `docker tag` dùng để **tạo một "biệt danh" (alias) mới** cho một image đã tồn tại.
 
 Nó **không sao chép** image. Nó chỉ là một thao tác gán tên siêu nhẹ, giống như tạo một file shortcut (phím tắt) trên desktop trỏ đến một file gốc.
-* Cú pháp : `docker tag <tên_gốc>:<tag_gốc> <tên_mới>:<tag_mới>`
-* Mục đích : chia làm 2 trường hợp chính:
+* Cú pháp: `docker tag <tên_gốc>:<tag_gốc> <tên_mới>:<tag_mới>`
+* Mục đích: chia làm 2 trường hợp chính:
   * Đánh dấu image ở local
   * Chuẩn bị cho `push`
 #### _a\. Tagging Local (Đánh dấu image ở local)_
@@ -956,7 +956,7 @@ Nó **không sao chép** image. Nó chỉ là một thao tác gán tên siêu nh
   
 > **Ghi nhớ:** `docker tag` là một thao tác *siêu nhẹ* và *siêu nhanh*. Nó chỉ chỉnh sửa "tên" (metadata), chứ không đụng gì đến "dữ liệu" (các layer) của image.
 #### 2.4.5. Docker push   
-* Cú pháp : `docker push [OPTIONS] <name>:<tag>`
+* Cú pháp: `docker push [OPTIONS] <name>:<tag>`
   * **`<name>:<tag>`:** Tên và tag của image bạn muốn đẩy lên.
 * Lệnh `docker push` dùng để **đẩy (upload) một image** từ máy local của bạn lên một remote registry (như Docker Hub, Amazon ECR, Google GCR).
 > **_Yêu cầu quan trọng (Bắt buộc)_** 
@@ -1021,7 +1021,7 @@ Nó **không sao chép** image. Nó chỉ là một thao tác gán tên siêu nh
 `Docker compose` như một công cụ giúp **định nghĩa và chạy các ứng dụng Docker có nhiều container** một cách dễ dàng.
 
 Một số khái Niệm Quan Trọng Trong Docker Compose
-* **`Services`** : Chứa các container chạy các dịch vụ bên trong một project (Ví dụ: `backend`, `frontend`, `mysql`, ...). Mỗi service thường được định nghĩa từ một **Docker Image** cụ thể hoặc được xây dựng từ một **Dockerfile**.
+* **`Services`**: Chứa các container chạy các dịch vụ bên trong một project (Ví dụ: `backend`, `frontend`, `mysql`, ...). Mỗi service thường được định nghĩa từ một **Docker Image** cụ thể hoặc được xây dựng từ một **Dockerfile**.
   * **Cấu hình Service:** Định nghĩa chi tiết cho từng service, bao gồm:
     * **`image`**: Chỉ định **Docker Image** được sử dụng.
     * **`build`**: Chỉ định đường dẫn đến thư mục chứa **Dockerfile** để tự xây dựng image.
@@ -1029,9 +1029,9 @@ Một số khái Niệm Quan Trọng Trong Docker Compose
     * **`volumes`**: Gắn các thư mục hoặc file từ máy host vào container (thường dùng để lưu trữ dữ liệu hoặc đồng bộ mã nguồn).
     * **`environment`**: Thiết lập các **biến môi trường** (environment variables) cho container.
     * **`depends_on`**: Chỉ định sự phụ thuộc giữa các service, đảm bảo một service chỉ được khởi động sau khi các service mà nó phụ thuộc đã sẵn sàng (ví dụ: `backend` phải khởi động sau `mysql`).
-* **`Networks`** : Cho phép các container trong cùng một ứng dụng giao tiếp với nhau. **Docker Compose** tự động tạo ra một network mặc định cho project của bạn.
+* **`Networks`**: Cho phép các container trong cùng một ứng dụng giao tiếp với nhau. **Docker Compose** tự động tạo ra một network mặc định cho project của bạn.
     * Các service được định nghĩa trong file **`docker-compose.yml`** sẽ được tự động kết nối vào network này và có thể giao tiếp với nhau bằng cách sử dụng **tên service** làm hostname.
-* **`Volumes`** : Được sử dụng để **lưu trữ dữ liệu** một cách bền vững.
+* **`Volumes`**: Được sử dụng để **lưu trữ dữ liệu** một cách bền vững.
     * **Volume** giúp dữ liệu không bị mất khi container bị dừng, xóa hoặc được tạo lại.
     * Chúng có thể được định nghĩa rõ ràng (named volumes) hoặc sử dụng tính năng **bind mounts** để ánh xạ thư mục từ máy host.
 * **`docker-compose.yml`** (hoặc `docker-compose.yaml`): Là **trái tim** của **Docker Compose**.
