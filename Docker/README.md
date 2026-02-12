@@ -9,7 +9,10 @@ Nói cách khác, ảo hoá giúp **một máy vật lý hoạt động như nhi
   * Ví dụ: VMware, VirtualBox, KVM, Hyper-V.
 * **Máy ảo (Virtual Machine – VM)** là **một hệ thống máy tính ảo**, mô phỏng phần cứng thật, có thể cài hệ điều hành và ứng dụng như một máy thật.
 
-![img.png](Image/hypervisor.png)
+<div style="text-align: center;">
+  <img src="Image/hypervisor.png" width="1000px">
+</div>
+
 ### **Mục đích của Ảo hoá**
 * **Tối ưu sử dụng tài nguyên phần cứng:** Giúp nhiều hệ thống chạy trên cùng một máy vật lý, tránh lãng phí tài nguyên.
 * **Giảm chi phí đầu tư và vận hành:** Không cần mua nhiều máy chủ vật lý, tiết kiệm điện năng, không gian, và chi phí bảo trì.
@@ -30,7 +33,10 @@ Nói cách khác, ảo hoá giúp **một máy vật lý hoạt động như nhi
 | **Storage-device based virtualization** | Phần mềm ảo hóa nằm **trực tiếp trong thiết bị lưu trữ** (như SAN/NAS).     | Bộ điều khiển (controller) trong thiết bị lưu trữ tự động gộp và phân vùng tài nguyên, cung cấp cho nhiều máy chủ.             | EMC VNX, NetApp ONTAP, IBM DS8000, Dell PowerVault                        |
 | **Network-based virtualization**        | Ảo hóa ở **lớp mạng lưu trữ (SAN/NAS switch)**.                             | Thiết bị hoặc phần mềm trung gian gom dữ liệu từ nhiều nguồn, phân phối động đến các máy chủ.                                  | IBM SAN Volume Controller (SVC), Brocade, Cisco MDS, DataCore SANsymphony |
 
-![img.png](Image/storage_virtualization.png)
+<div style="text-align: center;">
+  <img src="Image/storage_virtualization.png" width="1000px">
+</div>
+
 ### b. Ảo hóa hệ thống mạng (Network Virtualization)
 * Ảo hóa mạng là kỹ thuật tạo ra **nhiều mạng ảo độc lập** hoạt động trên **một hạ tầng vật lý duy nhất**.
 * Mục đích: Giúp chia hoặc gộp các thiết bị mạng (switch, router, firewall...) để sử dụng linh hoạt và hiệu quả hơn.
@@ -41,7 +47,10 @@ Nói cách khác, ảo hoá giúp **một máy vật lý hoạt động như nhi
 | **Internal** | Tạo nhiều mạng ảo bên trong 1 máy chủ vật lý.         | VMware vSwitch, Hyper-V     |
 | **External** | Gom nhiều thiết bị vật lý thành 1 mạng ảo thống nhất. | VLAN, VXLAN, SDN, Cisco ACI |
 
-![img.png](Image/network_virtualization.png)
+<div style="text-align: center;">
+  <img src="Image/network_virtualization.png" width="1000px">
+</div>
+
 ### c. Ảo hóa hệ thống ứng dụng (Application Virtualization)
 * Là công nghệ cho phép **tách rời ứng dụng khỏi hệ điều hành**, giúp **phân phối và chạy ứng dụng linh hoạt** hơn, mà **không cần cài đặt trực tiếp** lên máy người dùng.
 * **Ưu điểm:**
@@ -178,7 +187,9 @@ Công nghệ phổ biến: **Docker**, **Kubernetes**, **Podman**, **LXC**
 | **Trường hợp dùng**  | Triển khai ứng dụng nhanh, CI/CD, microservices | Chạy nhiều OS khác nhau, môi trường phức tạp |
 | **Công cụ phổ biến** | Docker, Kubernetes                              | VMware, VirtualBox, Hyper-V                  |
 
-![img.png](Image/container.png)
+<div style="text-align: center;">
+  <img src="Image/container.png" width="1000px">
+</div>
 
 ---
 ## 2. Docker
@@ -197,7 +208,9 @@ Công nghệ phổ biến: **Docker**, **Kubernetes**, **Podman**, **LXC**
 | **Docker Registry (Kho chứa)** | "Thư viện" hoặc "Nhà kho" (như Docker Hub).        | Dùng để **lưu trữ và chia sẻ** các Docker Image. |
 | **Docker Compose** | "Nhạc trưởng" của dàn nhạc.                      | Một công cụ để **định nghĩa và chạy** các ứng dụng gồm nhiều container. |
 
-![img.png](Image/docker.png)
+<div style="text-align: center;">
+  <img src="Image/docker.png" width="1000px">
+</div>
 
 ---
 ## 2.1. Cài đặt Docker
@@ -376,7 +389,10 @@ Nếu bạn đã từng chạy lệnh `sudo docker` *trước khi* thực hiện
 > **Nâng cấp Docker Engine:**
   Để nâng cấp, bạn chỉ cần **chạy lại lệnh ở Bước 2** (`sudo apt-get install ...`). `apt` sẽ tự động tìm và cài đặt phiên bản mới nhất từ kho lưu trữ bạn đã thiết lập.
 ### 2.1.3. Cấu hình proxy cho docker
-![img.png](Image/proxy.png)
+
+<div style="text-align: center;">
+  <img src="Image/proxy.png" width="1000px">
+</div>
 
 **_a. Proxy là gì?_**
 Một **Proxy** (hay **Proxy Server**) hiểu đơn giản là một **"người gác cổng"** hoặc một **"người trung gian"** đứng giữa máy tính của bạn và Internet.
@@ -985,8 +1001,12 @@ Nó **không sao chép** image. Nó chỉ là một thao tác gán tên siêu nh
     https://docs.docker.com/go/credential-store/
     
     ```
-    ![docker_login.png](Image/docker_login.png)
-    ![img.png](Image/login_success.png)
+
+    <div style="text-align: center;">
+      <img src="Image/docker_login.png" alt="docker_login" style="width: 1000px;">
+      <img src="Image/login_success.png" alt="docker_login_browser" style="width: 1000px;">
+    </div>
+
   * **_Bước 2: Tag lại image_**
       ```shell
       ngtukien@NgTuKien:~/Documents/TYP/typ-training-2025/kiennt_b23dccn465_training_gd1/Tuan_3_Docker$ docker rmi ngtukien/stemhub:1.0
